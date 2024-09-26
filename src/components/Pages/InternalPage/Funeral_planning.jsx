@@ -27,7 +27,7 @@ const Funeral_planning = ({ username, password, goToMenu }) => {
 		const loadData = async () => {
 			try {
 				const response = await axios.get(
-					`https://well1.netlify.app/load/${username}`
+					`https://welldying-backend.onrender.com/load/${username}`
 				);
 				const data = response.data;
 
@@ -126,11 +126,15 @@ const Funeral_planning = ({ username, password, goToMenu }) => {
 		}
 
 		try {
-			await axios.post("https://well1.netlify.app/save", formData, {
-				headers: {
-					"Content-Type": "multipart/form-data",
-				},
-			});
+			await axios.post(
+				"https://welldying-backend.onrender.com/save",
+				formData,
+				{
+					headers: {
+						"Content-Type": "multipart/form-data",
+					},
+				}
+			);
 			alert("데이터가 성공적으로 저장되었습니다.");
 		} catch (error) {
 			console.error("저장 오류:", error);

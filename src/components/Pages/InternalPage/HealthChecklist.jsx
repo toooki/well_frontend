@@ -6,7 +6,7 @@ function SavetheList({ formData }) {
 	const handleSaveHealthData = async () => {
 		try {
 			const response = await axios.post(
-				"https://well1.netlify.app/savehealthdata",
+				"https://welldying-backend.onrender.com/savehealthdata",
 				formData
 			);
 			console.log(response.data); // 서버로부터 받은 응답 확인
@@ -442,7 +442,7 @@ const HealthChecklist = ({ goToMenu, username, password }) => {
 	const fetchUserhealthdata = async () => {
 		try {
 			const response = await axios.get(
-				`https://well1.netlify.app/healthdatauser?username=${username}`
+				`https://welldying-backend.onrender.com/healthdatauser?username=${username}`
 			);
 			if (response.data.length === 0) {
 				return;

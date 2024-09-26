@@ -7,7 +7,7 @@ function SavetheList({ formData }) {
 		try {
 			console.log(formData);
 			const response = await axios.post(
-				"https://well1.netlify.app/savemindlist",
+				"https://welldying-backend.onrender.com/savemindlist",
 				formData
 			);
 			console.log(response.data); // 서버로부터 받은 응답 확인
@@ -37,7 +37,7 @@ function MindChecklist({ goToMenu, username, password }) {
 	const fetchUsermindList = async () => {
 		try {
 			const response = await axios.get(
-				`https://well1.netlify.app/mindlistuser?username=${username}`
+				`https://welldying-backend.onrender.com/mindlistuser?username=${username}`
 			);
 			const usermindList = response.data;
 			setItems(usermindList);

@@ -16,10 +16,13 @@ const SignoutForm = (props) => {
 	};
 	const handleSingout = async () => {
 		try {
-			const response = await axios.post("https://well1.netlify.app/signout", {
-				requestId: formData.requestId,
-				password: formData.password,
-			});
+			const response = await axios.post(
+				"https://welldying-backend.onrender.com/signout",
+				{
+					requestId: formData.requestId,
+					password: formData.password,
+				}
+			);
 			console.log(response.data); // 서버로부터 받은 응답 확인
 			alert("회원탈퇴에 성공했습니다.");
 			props.index("0");

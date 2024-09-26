@@ -6,7 +6,7 @@ function SavetheList({ formData }) {
 	const handleSaveBucketlist = async () => {
 		try {
 			const response = await axios.post(
-				"https://well1.netlify.app/savebuckitlist",
+				"https://welldying-backend.onrender.com/savebuckitlist",
 				formData
 			);
 			console.log(response.data); // 서버로부터 받은 응답 확인
@@ -36,7 +36,7 @@ function Checklist({ goToMenu, username, password }) {
 	const fetchUserBucketList = async () => {
 		try {
 			const response = await axios.get(
-				`https://well1.netlify.app/bucketlistuser?username=${username}`
+				`https://welldying-backend.onrender.com/bucketlistuser?username=${username}`
 			);
 			const userBucketList = response.data;
 			setItems(userBucketList);

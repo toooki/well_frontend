@@ -23,7 +23,7 @@ const SignupForm = (props) => {
 	const handleCheckUsername = async () => {
 		try {
 			const response = await axios.post(
-				"https://well1.netlify.app/check-username",
+				"https://welldying-backend.onrender.com/check-username",
 				{
 					username: formData.username,
 				}
@@ -43,7 +43,7 @@ const SignupForm = (props) => {
 
 	const handleRequestVerificationCode = async () => {
 		try {
-			await axios.post("https://well1.netlify.app/send", {
+			await axios.post("https://welldying-backend.onrender.com/send", {
 				phoneNumber: formData.phone,
 			});
 			alert("인증 코드를 전송했습니다.");
@@ -60,7 +60,7 @@ const SignupForm = (props) => {
 		}
 		try {
 			const response = await axios.post(
-				"https://well1.netlify.app/verify-code",
+				"https://welldying-backend.onrender.com/verify-code",
 				{
 					username: formData.username,
 					password: formData.password,

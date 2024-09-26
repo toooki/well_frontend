@@ -27,7 +27,7 @@ export const AuthProvider = ({ children }) => {
 
 	const fetchProfile = async (username) => {
 		const response = await fetch(
-			`https://well1.netlify.app/userinfo?username=${username}`
+			`https://welldying-backend.onrender.com/userinfo?username=${username}`
 		);
 		const user = await response.json();
 		setProfile(user[0]);
@@ -43,7 +43,7 @@ export const AuthProvider = ({ children }) => {
 	const updateCompleted = async (username, work) => {
 		try {
 			await axios.post(
-				`https://well1.netlify.app/complete?username=${username}&work=${work}`
+				`https://welldying-backend.onrender.com/complete?username=${username}&work=${work}`
 			);
 			fetchProfile(username);
 		} catch (error) {

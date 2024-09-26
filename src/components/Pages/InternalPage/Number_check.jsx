@@ -7,7 +7,7 @@ function SavetheList({ formData }) {
 		try {
 			console.log(formData);
 			const response = await axios.post(
-				"https://well1.netlify.app/savephonenumber",
+				"https://welldying-backend.onrender.com/savephonenumber",
 				formData
 			);
 			console.log(response.data); // 서버로부터 받은 응답 확인
@@ -40,7 +40,7 @@ const Number_check = ({ username, password, goToMenu }) => {
 	const fetchUsermindList = async () => {
 		try {
 			const response = await axios.get(
-				`https://well1.netlify.app/phonenumberuser?username=${username}`
+				`https://welldying-backend.onrender.com/phonenumberuser?username=${username}`
 			);
 			const userphonenumberList = response.data;
 			setItems(userphonenumberList);
