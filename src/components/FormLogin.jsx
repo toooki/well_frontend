@@ -19,13 +19,10 @@ const LoginForm = (props) => {
 
 	const handleLogin = async () => {
 		try {
-			const response = await axios.post(
-				"https://welldying-backend.onrender.com/login",
-				{
-					username: formData.username,
-					password: formData.password,
-				}
-			);
+			const response = await axios.post("https://well1.netlify.app/login", {
+				username: formData.username,
+				password: formData.password,
+			});
 			console.log(response.data); // 서버로부터 받은 응답 확인
 			alert("로그인에 성공했습니다.");
 			handleLoginSuccess(formData); // 로그인 성공 시 부모 컴포넌트에 formData 전달

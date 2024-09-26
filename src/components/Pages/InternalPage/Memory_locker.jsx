@@ -19,7 +19,7 @@ const Memory_locker = ({ goToMenu, username, password }) => {
 
 	const fetchFiles = () => {
 		axios
-			.get("https://welldying-backend.onrender.com/files", {
+			.get("https://well1.netlify.app/files", {
 				params: { username },
 			})
 			.then((response) => {
@@ -57,7 +57,7 @@ const Memory_locker = ({ goToMenu, username, password }) => {
 		formData.append("password", password);
 
 		axios
-			.post("https://welldying-backend.onrender.com/upload", formData)
+			.post("https://well1.netlify.app/upload", formData)
 			.then((response) => {
 				console.log("File uploaded successfully:", response.data);
 				fetchFiles(); // 파일 업로드 후 파일 목록 갱신
@@ -80,7 +80,7 @@ const Memory_locker = ({ goToMenu, username, password }) => {
 	const handleDelete = (event, fileId) => {
 		event.stopPropagation(); // 이벤트 전파 중단
 		axios
-			.delete(`https://welldying-backend.onrender.com/files/${fileId}`)
+			.delete(`https://well1.netlify.app/files/${fileId}`)
 			.then((response) => {
 				console.log("File deleted successfully");
 				fetchFiles(); // 파일 삭제 후 파일 목록 갱신
@@ -121,14 +121,14 @@ const Memory_locker = ({ goToMenu, username, password }) => {
 						>
 							{file.type === "image" ? (
 								<img
-									src={`https://welldying-backend.onrender.com/files/${file.id}`}
+									src={`https://well1.netlify.app/files/${file.id}`}
 									alt={file.filename}
 									className="responsive-image"
 								/>
 							) : (
 								<video className="responsive-video">
 									<source
-										src={`https://welldying-backend.onrender.com/files/${file.id}`}
+										src={`https://well1.netlify.app/files/${file.id}`}
 										type={`video/${(file.filename || "").split(".").pop()}`}
 									/>
 								</video>
@@ -145,14 +145,14 @@ const Memory_locker = ({ goToMenu, username, password }) => {
 					<div className="display-container">
 						{selectedFileForDisplay.type === "image" ? (
 							<img
-								src={`https://welldying-backend.onrender.com/files/${selectedFileForDisplay.id}`}
+								src={`https://well1.netlify.app/files/${selectedFileForDisplay.id}`}
 								alt={selectedFileForDisplay.filename}
 								className="display-image"
 							/>
 						) : (
 							<video controls autoPlay className="display-video">
 								<source
-									src={`https://welldying-backend.onrender.com/files/${selectedFileForDisplay.id}`}
+									src={`https://well1.netlify.app/files/${selectedFileForDisplay.id}`}
 									type={`video/${(selectedFileForDisplay.filename || "").split(".").pop()}`}
 								/>
 							</video>
