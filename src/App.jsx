@@ -5,7 +5,7 @@ import { getResizeEventListener } from "./service/index";
 import Main from "./components/Main";
 import Page from "./components/Modules/Pages";
 import formData from "./components/FormLogin";
-import "./css";
+import "./css/auth.css";
 
 const App = () => {
 	useEffect(() => {
