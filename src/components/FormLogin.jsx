@@ -4,7 +4,7 @@ import axios from "axios";
 import { AuthContext } from "../context/AuthContext";
 
 import "../css/auth.css";
-import "frontend/src/css/auth.css";
+import "src/css/auth.css";
 
 const LoginForm = (props) => {
 	//로그인 데이터 수발신 처리
