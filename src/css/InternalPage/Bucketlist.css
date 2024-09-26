@@ -1,0 +1,111 @@
+.bucketlistContainer {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    .top-bar {
+        background-color: #8f8f8f;
+        width: 100%;
+        height: 60px;
+        position: sticky;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        button {
+            width: 20%;
+            height: 70%;
+            font-size: 16px;
+            font-weight: bold;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            margin: 3%;
+            padding: 5px;
+            position: sticky;
+            cursor: pointer;
+            outline: none;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+    }
+
+    form {
+        display: flex;
+        align-items: center;
+        /* 수직 정렬 */
+        margin-bottom: 20px;
+        flex-wrap: nowrap;
+        /* 자식 요소들이 줄바꿈되지 않도록 설정 */
+        margin-top: 10%;
+        flex-direction: column;
+        align-items: center;
+        width: 80%;
+        input {
+            margin: 0;
+            min-width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 3%;
+            /* 패딩을 줄여 입력 필드 크기 조정 */
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            /* 패딩과 테두리를 포함하여 너비 계산 */
+        }
+    }
+
+    form input:first-child {
+        flex: 1;
+        /* 이름 입력란 너비를 flex로 조정 */
+        max-width: 20%;
+        /* 이름 입력란 너비 설정 */
+    }
+
+    form input:last-child {
+        flex: 2;
+        /* 전화번호 입력란 너비를 flex로 조정 */
+        max-width: 30%;
+        /* 전화번호 입력란 너비 설정 */
+    }
+
+    ul {
+        width: 80%;
+        padding: 0;
+        list-style-type: none;
+    }
+
+    ul li {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
+        border-bottom: 1px solid #ccc;
+        /* 리스트 항목 하단 테두리 */
+    }
+
+    ul li span {
+        flex: 1;
+    }
+}
+
+.bucketlistContainer h2 {
+    font-size: 26px;
+    }
+
+.bucketlist-add {
+    width: 100%;
+    height: 40%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+        font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-top: 25px;
+}

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>사용자 위치 기반 자원봉사센터 검색</title>
+  <style>
+    .map_wrap,
+    .map_wrap * {
+      margin: 0;
+      padding: 0;
+      font-family: 'Malgun Gothic', dotum, '돋움', sans-serif;
+      font-size: 12px;
+    }
+
+    .map_wrap {
+      position: relative;
+      width: 100%;
+      height: 500px;
+    }
+
+    #menu_wrap {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: rgba(255, 255, 255, 0.7);
+      padding: 5px;
+      border-radius: 10px;
+      z-index: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="map_wrap">
+    <div id="map" style="width:100%;height:100%;position:relative;overflow:hidden;"></div>
+    <div id="menu_wrap" class="bg_white">
+      <h1>자원봉사센터</h1>
+    </div>
+  </div>
+
+  <script type="text/javascript"
+    src="//dapi.kakao.com/v2/maps/sdk.js?appkey=075bff71b355db7013e30c5ceb3cf8a7&libraries=services"></script>
+  <script>
+    var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+      mapOption = {
+        center: new kakao.maps.LatLng(37.566826, 126.9786567), // 지도의 중심좌표 (서울)
+        level: 3 // 지도의 확대 레벨
+      };
+
+    // 지도를 생성합니다    
+    var map = new kakao.maps.Map(mapContainer, mapOption);
+
+    // 장소 검색 객체를 생성합니다
+    var ps = new kakao.maps.services.Places();
+
+    // 검색 결과 목록이나 마커를 클릭했을 때 장소명을 표출할 인포윈도우를 생성합니다
+    var infowindow = new kakao.maps.InfoWindow({ zIndex: 1 });
+
+    // 마커를 담을 배열입니다
+    var markers = [];
+    var userMarker; // 사용자 위치 마커
+
+    // 사용자 위치 가져오기
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(function (position) {
+        var lat = position.coords.latitude;
+        var lon = position.coords.longitude;
+        var locPosition = new kakao.maps.LatLng(lat, lon);
+
+        // 사용자 위치 마커 생성
+        userMarker = new kakao.maps.Marker({
+          position: locPosition,
+          image: new kakao.maps.MarkerImage(
+            'https://cdn-icons-png.flaticon.com/512/64/64572.png', // 파란 점 아이콘
+            new kakao.maps.Size(24, 24), // 아이콘 크기
+            { offset: new kakao.maps.Point(12, 12) } // 아이콘 중심
+          )
+        });
+        userMarker.setMap(map);
+
+        // 지도 중심을 사용자 위치로 이동
+        map.setCenter(locPosition);
+
+        // 사용자 위치 주변 자원봉사센터 검색
+        searchVolunteerCenters(locPosition);
+      }, function (error) {
+        console.error('Geolocation Error:', error);
+        searchVolunteerCenters(mapOption.center); // 기본 위치로 검색
+      });
+    } else {
+      alert('Geolocation을 사용할 수 없습니다.');
+      searchVolunteerCenters(mapOption.center); // 기본 위치로 검색
+    }
+
+    // 자원봉사센터 검색 함수
+    function searchVolunteerCenters(locPosition) {
+      var keyword = "자원봉사센터";
+      var options = {
+        location: locPosition,
+        radius: 10000 // 10km 반경
+      };
+
+      ps.keywordSearch(keyword, function (data, status, pagination) {
+        placesSearchCB(data, status, pagination, locPosition);
+      }, options);
+    }
+
+    // 장소검색이 완료됐을 때 호출되는 콜백함수 입니다
+    function placesSearchCB(data, status, pagination, locPosition) {
+      if (status === kakao.maps.services.Status.OK) {
+        // 정상적으로 검색이 완료됐으면
+        // 검색 목록과 마커를 표출합니다
+        displayPlaces(data, locPosition);
+      } else if (status === kakao.maps.services.Status.ZERO_RESULT) {
+        alert('검색 결과가 존재하지 않습니다.');
+      } else if (status === kakao.maps.services.Status.ERROR) {
+        alert('검색 결과 중 오류가 발생했습니다.');
+      }
+    }
+
+    // 검색 결과 목록과 마커를 표출하는 함수입니다
+    function displayPlaces(places, locPosition) {
+      // 지도에 표시되고 있는 마커를 제거합니다
+      removeMarker();
+
+      var bounds = new kakao.maps.LatLngBounds();
+      bounds.extend(locPosition); // 사용자 위치를 포함
+
+      for (var i = 0; i < places.length; i++) {
+        // 마커를 생성하고 지도에 표시합니다
+        var placePosition = new kakao.maps.LatLng(places[i].y, places[i].x);
+        var marker = addMarker(placePosition, places[i].place_name);
+
+        // 검색된 장소 위치를 기준으로 지도 범위를 재설정하기 위해
+        // LatLngBounds 객체에 좌표를 추가합니다
+        bounds.extend(placePosition);
+      }
+
+      // 검색된 장소 위치를 기준으로 지도 범위를 재설정합니다
+      map.setBounds(bounds);
+    }
+
+    // 마커를 생성하고 지도 위에 마커를 표시하는 함수입니다
+    function addMarker(position, title) {
+      var marker = new kakao.maps.Marker({
+        position: position, // 마커의 위치
+      });
+
+      marker.setMap(map); // 지도 위에 마커를 표출합니다
+      markers.push(marker); // 배열에 생성된 마커를 추가합니다
+
+      // 마커에 인포윈도우를 표시합니다
+      displayInfowindow(marker, title);
+
+      return marker;
+    }
+
+    // 지도 위에 표시되고 있는 마커를 모두 제거합니다
+    function removeMarker() {
+      for (var i = 0; i < markers.length; i++) {
+        markers[i].setMap(null);
+      }
+      markers = [];
+    }
+
+    // 마커에 인포윈도우를 표시하는 함수입니다
+    function displayInfowindow(marker, title) {
+      var content = '<div style="padding:5px;z-index:1;">' + title + '</div>';
+      infowindow.setContent(content);
+      infowindow.open(map, marker);
+    }
+  </script>
+</body>
+
+</html>

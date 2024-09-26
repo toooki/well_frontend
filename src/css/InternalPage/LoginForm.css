@@ -1,0 +1,105 @@
+/* 로그인 컨테이너에 대한 일반적인 스타일링 부분 */
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f3f2ef;
+}
+
+/* Styling for the login form */
+.login-form {
+  background-color: rgb(255, 255, 255);
+  padding: 24px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 350px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Title styling */
+.login-form h2 {
+  font-size: 24px;
+  margin-bottom: 24px;
+  color: #333;
+  font-weight: 600;
+}
+
+/* Input fields styling */
+.login-form label {
+  display: block;  /* 라벨을 블록 요소로 만들어 입력 필드 위에 위치 */
+  margin-bottom: 8px;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+  width: 1100px;  /* 입력 필드의 가로 크기 */
+  padding: 16px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  height: 50px;
+  box-sizing: border-box;
+}
+
+/* Button styling */
+.login-form .login_button {
+  width: 100%;
+  padding: 12px;
+  background-color: #f1b862;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.login-form button:hover {
+  background-color: #005f8a;
+}
+
+/* Back button styling */
+.login-form .back_button {
+  margin-top: 12px;
+  background-color: #f3f2ef;
+  color: #333;
+  border: none;
+  border-radius: 4px;
+  padding: 10px;
+  width: 100%;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.login-form .back-button:hover {
+  background-color: #e1dfdd;
+}
+
+/* Link styling */
+.login-form a {
+  color: #0073b1;
+  text-decoration: none;
+  margin-top: 16px;
+  display: inline-block;
+}
+
+.login-form a:hover {
+  text-decoration: underline;
+}
+
+.signup-link {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.signup-link a {
+  color: #0073b1;
+  text-decoration: none;
+  font-weight: 600;
+}

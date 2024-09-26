@@ -1,0 +1,56 @@
+.bucketlistContainer {
+	max-width: 600px;
+	margin: 0 auto;
+	padding: 20px;
+	border: 2px solid #ccc;
+	border-radius: 8px;
+	background-color: #f9f9f9;
+}
+
+.bucketlistContainer h2 {
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+form {
+	display: flex;
+}
+
+
+
+
+ul {
+	padding: 0;
+	list-style-type: none;
+}
+
+ul li {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 10px;
+	border-bottom: 1px solid #ccc;
+}
+
+ul li span {
+	flex: 1;
+}
+
+ul li button {
+	padding: 5px 10px;
+	background-color: #f44336;
+	color: white;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+/* 체크박스 스타일 */
+.completedCheckbox {
+	width: 20px;
+	height: 20px;
+	background-color: green; /* 완료되었을 때의 배경색 */
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}

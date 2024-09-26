@@ -1,0 +1,35 @@
+.survey-container {
+	padding: 20px;
+}
+
+.question-container {
+	margin-bottom: 20px;
+}
+
+.question-text {
+	font-weight: bold;
+}
+
+.options-container {
+	margin-top: 10px;
+}
+
+.option-label {
+	display: block;
+	margin-bottom: 5px;
+}
+
+.calculate-button,
+.menu-button {
+	margin-top: 20px;
+	padding: 10px 20px;
+	background-color: #4caf50;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.menu-button {
+	background-color: #f44336;
+}
