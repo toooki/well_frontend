@@ -58,7 +58,9 @@ const DashBoard = (props) => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
         >
-            <Clock />
+            <div className="header">
+                <Clock />
+            </div>
             <div className="progress-container">
                 <div className="progress-text">
                     전체 {menuNames.length}개 중 {progressCount}개 완료
