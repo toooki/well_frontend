@@ -8,7 +8,7 @@
   background-color: #f3f2ef;
 }
 
-/* Styling for the login form */
+/* 로그인 폼 스타일링 */
 .login-form {
   background-color: rgb(255, 255, 255);
   padding: 24px;
@@ -21,7 +21,7 @@
   gap: 16px;
 }
 
-/* Title styling */
+/* 제목 스타일링 */
 .login-form h2 {
   font-size: 24px;
   margin-bottom: 24px;
@@ -29,7 +29,7 @@
   font-weight: 600;
 }
 
-/* Input fields styling */
+/* 입력 필드 스타일링 */
 .login-form label {
   display: block;  /* 라벨을 블록 요소로 만들어 입력 필드 위에 위치 */
   margin-bottom: 8px;
@@ -37,7 +37,7 @@
 
 .login-form input[type="text"],
 .login-form input[type="password"] {
-  width: 1100px;  /* 입력 필드의 가로 크기 */
+  width: 100%;  /* 입력 필드의 가로 크기 */
   padding: 16px;
   margin-bottom: 16px;
   border: 1px solid #ccc;
@@ -47,7 +47,7 @@
   box-sizing: border-box;
 }
 
-/* Button styling */
+/* 버튼 스타일링 */
 .login-form .login_button {
   width: 100%;
   padding: 12px;
@@ -64,7 +64,7 @@
   background-color: #005f8a;
 }
 
-/* Back button styling */
+/* 뒤로가기 버튼 스타일링 */
 .login-form .back_button {
   margin-top: 12px;
   background-color: #f3f2ef;
@@ -81,7 +81,7 @@
   background-color: #e1dfdd;
 }
 
-/* Link styling */
+/* 링크 스타일링 */
 .login-form a {
   color: #0073b1;
   text-decoration: none;

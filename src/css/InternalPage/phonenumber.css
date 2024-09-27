@@ -1,89 +1,86 @@
 .phoneListContainer {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	box-sizing: border-box;
-
-    .top-bar {
-        background-color: #8f8f8f;
-        width: 100%;
-        height: 60px;
-        position: sticky;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-
-        button {
-            width: 20%;
-            height: 70%;
-            background-color: #f1b862;
-            font-size: 16px;
-            font-weight: bold;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            margin: 3%;
-            padding: 5px;
-            position: sticky;
-            cursor: pointer;
-            outline: none;
-            transition: background-color 0.3s, transform 0.2s;
-        }
-    }
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
 }
 
-.Phone_number_main{
-    width: 80px;
-    height: 45px;
-    background-color: #f1b862;
-        font-size: 16px;
-    font-weight: bold;
-    color: #fff;
+.phoneListContainer .top-bar {
+    background-color: #8f8f8f;
+    width: 100%;
+    height: 60px;
+    position: sticky;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.Phone_number_main {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background: url("icons/back_button.svg") no-repeat center center;
+    background-size: contain;
     border: none;
-    border-radius: 5px;
-	position: fixed;
-	left: 0px;
-	top: 0px;
     cursor: pointer;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2%;
+    color: transparent;
+    position: sticky;
+    left: 3%;
+    top: 1%;
     outline: none;
-    transition: background-color 0.3s, transform 0.2s;	
 }
 
-.Phone_number_save{
-    width: 80px;
-    height: 45px;
-    background-color: #f1b862;
-        font-size: 16px;
-    font-weight: bold;
-    color: #fff;
+.Phone_number_save {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background: url("icons/Save.svg") no-repeat center center;
+    background-size: contain;
     border: none;
-    border-radius: 5px;
-	position: fixed;
-	right: 0px;
-	top: 0px;
     cursor: pointer;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2%;
+    color: transparent;
+    position: sticky;
+    right: 3%;
+    top: 1%;
     outline: none;
-    transition: background-color 0.3s, transform 0.2s;	
 }
 
-.name_input, 
-.phone_Number_input,
-.phone_Number_add {
-    width: 100%; 
-    padding: 12px 15px;
+form {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: nowrap;
+    margin-top: 10%;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+}
+
+form input {
+    margin: 0;
+    min-width: 100%;
     border: 1px solid #ccc;
     border-radius: 4px;
-    margin-bottom: 10px; 
+    padding: 3%;
+    box-sizing: border-box;
 }
 
 .phone_Number_add {
     width: 100%;
     border: 1px solid #ccc;
     border-radius: 4px;
-    background-color: #f1b862;
-        font-size: 16px;
+    font-size: 16px;
     font-weight: bold;
     color: #fff;
     border: none;
@@ -91,14 +88,5 @@
     cursor: pointer;
     outline: none;
     transition: background-color 0.3s, transform 0.2s;
-    margin-top: 5px;
+    margin-top: 25px;
 }
-
-.phone_Number_form{
-	display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-}
-
-

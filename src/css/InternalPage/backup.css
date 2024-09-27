@@ -1,6 +1,6 @@
 main {
     background-color: #f1b862;
-        font-size: 16px;
+    font-size: 16px;
     font-weight: bold;
     color: #fff;
     border: none;
@@ -12,25 +12,25 @@ main {
     cursor: pointer;
     outline: none;
     transition: background-color 0.3s, transform 0.2s;
-  }
+}
 
-  main{
+main {
     position: relative;
     width: 30px;
-    height: 30px; 
-    background: url('icons/main.png') no-repeat center center;
+    height: 30px;
+    background: url("icons/main.png") no-repeat center center;
     background-size: cover;
     border: none;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    overflow: hidden; 
+    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: transparent; 
+    color: transparent;
     position: fixed;
     left: 15px;
     top: 15px;
     cursor: pointer;
     outline: none;
-  }
+}

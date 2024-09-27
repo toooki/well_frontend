@@ -5,65 +5,69 @@
     flex-direction: column;
     align-items: center;
     box-sizing: border-box;
-
-    .top-bar {
-        background-color: #8f8f8f;
-        width: 100%;
-        height: 60px;
-        position: sticky;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-
-        input {
-            margin: 0;
-            min-width: 25%;
-            padding: 12px 15px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-
-        button {
-            width: 20%;
-            height: 70%;
-            background-color: #f1b862;
-            font-size: 16px;
-            font-weight: bold;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            margin: 3%;
-            padding: 5px;
-            position: sticky;
-            cursor: pointer;
-            outline: none;
-            transition: background-color 0.3s, transform 0.2s;
-        }
-    }
 }
 
-.Memory_locker_name {
-    }
+.Memory_locker_container .top-bar {
+    background-color: #8f8f8f;
+    width: 100%;
+    height: 60px;
+    position: sticky;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.Memory_locker_container .top-bar input {
+    margin: 0;
+    min-width: 25%;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
 
 .locker_main {
-    background-color: #f1b862;
-        font-size: 16px;
-    font-weight: bold;
-    color: #fff;
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background: url("icons/back_button.svg") no-repeat center center;
+    background-size: contain;
     border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    position: fixed;
-    left: 10px;
-    top: 10px;
     cursor: pointer;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2%;
+    color: transparent;
+    position: sticky;
+    left: 3%;
+    top: 1%;
     outline: none;
-    transition: background-color 0.3s, transform 0.2s;
+}
+
+.File_upload {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background: url("icons/Save.svg") no-repeat center center;
+    background-size: contain;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2%;
+    color: transparent;
+    position: sticky;
+    right: 3%;
+    top: 1%;
+    outline: none;
 }
 
 .File_select {
-        font-size: 16px;
+    font-size: 16px;
     font-weight: bold;
     color: #000000;
     background-color: #f1b86200;
@@ -74,25 +78,8 @@
     transition: background-color 0.3s, transform 0.2s;
 }
 
-.File_upload {
-    background-color: #f1b862;
-        font-size: 16px;
-    font-weight: bold;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    position: fixed;
-    right: 10px;
-    top: 10px;
-    cursor: pointer;
-    outline: none;
-    transition: background-color 0.3s, transform 0.2s;
-}
-
 .File_delect {
-    background-color: #f1b862;
-        font-size: 16px;
+    font-size: 16px;
     font-weight: bold;
     color: #fff;
     border: none;
@@ -106,22 +93,18 @@
     transition: background-color 0.3s, transform 0.2s;
 }
 
-
 .preview_display {
-
-        font-size: 25px;
+    font-size: 25px;
     font-weight: bold;
     color: #000000;
 }
 
-
-
-.files{
+.files {
     display: flex;
     width: 90%;
     height: max-content;
-
 }
+
 .file-list {
     display: flex;
     width: 100%;
@@ -129,6 +112,7 @@
     gap: 10px;
     margin-top: 20px;
 }
+
 .file-item {
     display: flex;
     flex: 1 0 40%;
@@ -141,11 +125,13 @@
     justify-content: center;
     align-items: center;
     height: fit-content;
-    button {
-        position: relative;
-        width: 100%;
-    }
 }
+
+.file-item button {
+    position: relative;
+    width: 100%;
+}
+
 .responsive-image,
 .responsive-video {
     width: 100%;

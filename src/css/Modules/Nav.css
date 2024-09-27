@@ -9,25 +9,25 @@
     align-items: center;
     border-top: 2px solid whitesmoke;
     background-color: #ffffff;
+}
 
-    #line{
-        border-right: 1px solid whitesmoke;
-        background-color: #ffffff00;
-        width: 1px;
-        height: 60%;
-    }
+.nav #line {
+    border-right: 1px solid whitesmoke;
+    background-color: #ffffff00;
+    width: 1px;
+    height: 60%;
+}
 
-    button {
-        margin: 0;
-        border-radius: 0;
-        height: 100%;
-        flex: 1 1 0;
-        align-self: stretch;
-        background-color: #ffffff00;
-        color: black;
-    }
+.nav button {
+    margin: 0;
+    border-radius: 0;
+    height: 100%;
+    flex: 1 1 0;
+    align-self: stretch;
+    background-color: #ffffff00;
+    color: black;
+}
 
-    button:hover {
-        background-color: #f1f1f1;
-    }
+.nav button:hover {
+    background-color: #f1f1f1;
 }

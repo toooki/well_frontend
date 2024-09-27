@@ -5,101 +5,118 @@
     flex-direction: column;
     align-items: center;
     box-sizing: border-box;
-    .top-bar {
-        background-color: #8f8f8f;
-        width: 100%;
-        height: 60px;
-        position: sticky;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        button {
-            width: 20%;
-            height: 70%;
-            font-size: 16px;
-            font-weight: bold;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            margin: 3%;
-            padding: 5px;
-            position: sticky;
-            cursor: pointer;
-            outline: none;
-            transition: background-color 0.3s, transform 0.2s;
-        }
-    }
+}
 
-    form {
-        display: flex;
-        align-items: center;
-        /* 수직 정렬 */
-        margin-bottom: 20px;
-        flex-wrap: nowrap;
-        /* 자식 요소들이 줄바꿈되지 않도록 설정 */
-        margin-top: 10%;
-        flex-direction: column;
-        align-items: center;
-        width: 80%;
-        input {
-            margin: 0;
-            min-width: 100%;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            padding: 3%;
-            /* 패딩을 줄여 입력 필드 크기 조정 */
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-            /* 패딩과 테두리를 포함하여 너비 계산 */
-        }
-    }
+.bucketlistContainer .top-bar {
+    background-color: #8f8f8f;
+    width: 100%;
+    height: 60px;
+    position: sticky;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
 
-    form input:first-child {
-        flex: 1;
-        /* 이름 입력란 너비를 flex로 조정 */
-        max-width: 20%;
-        /* 이름 입력란 너비 설정 */
-    }
+.bucketlistContainer form {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: nowrap;
+    margin-top: 10%;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+}
 
-    form input:last-child {
-        flex: 2;
-        /* 전화번호 입력란 너비를 flex로 조정 */
-        max-width: 30%;
-        /* 전화번호 입력란 너비 설정 */
-    }
+.bucketlistContainer form input {
+    margin: 0;
+    min-width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 3%;
+    box-sizing: border-box;
+}
 
-    ul {
-        width: 80%;
-        padding: 0;
-        list-style-type: none;
-    }
+.bucketlistContainer form input:first-child {
+    flex: 1;
+    max-width: 20%;
+}
 
-    ul li {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 10px;
-        border-bottom: 1px solid #ccc;
-        /* 리스트 항목 하단 테두리 */
-    }
+.bucketlistContainer form input:last-child {
+    flex: 2;
+    max-width: 30%;
+}
 
-    ul li span {
-        flex: 1;
-    }
+.bucketlistContainer ul {
+    width: 80%;
+    padding: 0;
+    list-style-type: none;
+}
+
+.bucketlistContainer ul li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.bucketlistContainer ul li span {
+    flex: 1;
+}
+
+.bucketlist-main {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background: url("icons/back_button.svg") no-repeat center center;
+    background-size: contain;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2%;
+    color: transparent;
+    position: sticky;
+    left: 3%;
+    top: 1%;
+    outline: none;
+}
+
+.bucketlist-save {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background: url("icons/Save.svg") no-repeat center center;
+    background-size: contain;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2%;
+    color: transparent;
+    position: sticky;
+    right: 3%;
+    top: 1%;
+    outline: none;
 }
 
 .bucketlistContainer h2 {
     font-size: 26px;
-    }
+}
 
 .bucketlist-add {
     width: 100%;
-    height: 40%;
     border: 1px solid #ccc;
     border-radius: 4px;
-        font-size: 16px;
+    font-size: 16px;
     font-weight: bold;
     color: #fff;
     border: none;

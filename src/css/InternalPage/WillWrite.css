@@ -5,48 +5,38 @@
     flex-direction: column;
     align-items: center;
     box-sizing: border-box;
-    .top-bar {
-        background-color: #8f8f8f;
-        width: 100%;
-        height: 60px;
-        position: sticky;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
 
-        button {
-            width: 20%;
-            height: 70%;
-            font-size: 16px;
-            font-weight: bold;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            margin: 3%;
-            padding: 5px;
-            position: sticky;
-            cursor: pointer;
-            outline: none;
-            transition: background-color 0.3s, transform 0.2s;
-        }
-    }
+.Will_Write_container .top-bar {
+    background-color: #8f8f8f;
+    width: 100%;
+    height: 60px;
+    position: sticky;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .Will_Write_main {
-    width: 80px;
-    height: 45px;
-        font-size: 16px;
-    font-weight: bold;
-    color: #fff;
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background: url("icons/back_button.svg") no-repeat center center;
+    background-size: contain;
     border: none;
-    border-radius: 5px;
-    position: fixed;
-    left: 0;
-    top: 0;
     cursor: pointer;
+    transition: background-color 0.3s ease;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2%;
+    color: transparent;
+    position: sticky;
+    left: 3%;
+    top: 1%;
     outline: none;
-    transition: background-color 0.3s, transform 0.2s;
 }
 
 .action-button,
@@ -65,6 +55,7 @@
 .audio-button:hover,
 .mode-button:hover,
 .text-button:hover {
+    background-color: #00000000;
 }
 
 .mode-buttons {

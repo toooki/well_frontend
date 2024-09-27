@@ -1,65 +1,88 @@
 .Mind_checklist_Container {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	box-sizing: border-box;
-
-    h4{
-        padding: 10%;
-        margin-top: -5%;
-    }
-
-}
-.Mind_checklist_main{
-    width: 80px;
-    height: 45px;
-    background-color: #f1b862;
-        font-size: 16px;
-    font-weight: bold;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    position: fixed;
-    left: 0px;
-    top: 0px;
-    cursor: pointer;
-    outline: none;
-    transition: background-color 0.3s, transform 0.2s;	
-  }
-
-.Mind_checklist_save{
-    width: 80px;
-    height: 45px;
-    background-color: #f1b862;
-        font-size: 16px;
-    font-weight: bold;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    position: fixed;
-    right: 0px;
-    top: 0px;
-    cursor: pointer;
-    outline: none;
-    transition: background-color 0.3s, transform 0.2s;
-}
-
-.Mind_checklist_set{
-    min-width: 100%;
-	padding: 12px 15px 12px 15px;
-	border: 1px solid #ccc;
-	border-radius: 4px;
-    margin-left: -5%;
-    margin-top: 10%;
-}
-
-.Mind_checklist_add{
+    display: flex;
     width: 100%;
-    height: 40px;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.Mind_checklist_Container .top-bar {
+    background-color: #8f8f8f;
+    width: 100%;
+    height: 60px;
+    position: sticky;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.Mind_checklist_main {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background: url("icons/back_button.svg") no-repeat center center;
+    background-size: contain;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2%;
+    color: transparent;
+    position: sticky;
+    left: 3%;
+    top: 1%;
+    outline: none;    
+}
+
+.Mind_checklist_save {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background: url("icons/Save.svg") no-repeat center center;
+    background-size: contain;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2%;
+    color: transparent;
+    position: sticky;
+    right: 3%;
+    top: 1%;
+    outline: none;
+}
+
+form {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: nowrap;
+    margin-top: 10%;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+}
+
+form input {
+    margin: 0;
+    min-width: 100%;
     border: 1px solid #ccc;
     border-radius: 4px;
-    background-color: #f1b862;
-        font-size: 16px;
+    padding: 3%;
+    box-sizing: border-box;
+}
+
+.Mind_checklist_add {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
     font-weight: bold;
     color: #fff;
     border: none;
@@ -67,5 +90,5 @@
     cursor: pointer;
     outline: none;
     transition: background-color 0.3s, transform 0.2s;
-    margin-top: 5px;
+    margin-top: 25px;
 }

@@ -1,9 +1,9 @@
-.Clock{
+.Clock {
     font-family: Galmuri11;
     font-stretch: condensed;
     font-size: calc(1em + 1vw);
     font-weight: normal;
-    margin: 3% 0 0 3% ;
+    margin: 3% 0 0 3%;
     position: sticky;
     bottom: 100%;
     right: 100%;
@@ -20,6 +20,7 @@
     margin-bottom: 2%;
     position: relative;
 }
+
 .leftButton,
 .rightButton {
     margin: 0;
@@ -31,6 +32,7 @@
     z-index: 1;
     background-color: #00000000;
 }
+
 .rightButton {
     left: 90%;
 }
@@ -39,7 +41,6 @@
 .rightButton:hover {
     background-color: #0000000a;
 }
-
 
 .menuContainer {
     position: relative;
@@ -51,6 +52,7 @@
     overflow-x: auto;
     scroll-snap-type: x mandatory;
 }
+
 .menuItem {
     display: flex;
     min-width: 80%;
@@ -58,13 +60,14 @@
     scroll-snap-align: center;
     align-items: center;
     margin-right: 2%;
-    button {
-        margin: 0;
-        border-radius: 10px;
-        width: 100%;
-        height: 100%;
-        text-wrap: wrap;
-    }
+}
+
+.menuItem button {
+    margin: 0;
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    text-wrap: wrap;
 }
 
 .menuSelect {
@@ -76,20 +79,22 @@
     flex-direction: row;
     justify-content: flex-start;
     align-content: flex-start;
-    .menuItem {
-        aspect-ratio: 1 / 1;
-        align-items: center;
-        justify-content: center;
-        margin: 0;
-        width: 25%;
-        min-width: unset;
-        height: unset;
-        button {
-            margin: 0;
-            height: 90%;
-            width: 90%;
-        }
-    }
+}
+
+.menuSelect .menuItem {
+    aspect-ratio: 1 / 1;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    width: 25%;
+    min-width: unset;
+    height: unset;
+}
+
+.menuSelect .menuItem button {
+    margin: 0;
+    height: 90%;
+    width: 90%;
 }
 
 .menuContainer > div:first-child {
