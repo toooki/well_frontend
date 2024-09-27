@@ -39,24 +39,3 @@ const AppWrapper = () => {
 };
 
 export default AppWrapper;
-
-// import React from 'react';
-// import { BrowserRouter as Router } from 'react-router-dom'; // import BrowserRouter as Router
-// import Main from './components/Main'
-// import Total from './components/Total';
-
-// const App = () => {
-//   return (
-//     // <Router> {/* Wrap Main component with Router */}
-//     //  <div>
-//     //    <Main/>
-//     //  </div>
-//     // </Router>
-//     <Router>
-//       <Total/>
-//     </Router>
-
-//   );
-// };
-
-// export default App;
