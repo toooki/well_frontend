@@ -27,7 +27,7 @@ const Funeral_planning = ({ username, password, goToMenu }) => {
 		const loadData = async () => {
 			try {
 				const response = await axios.get(
-					`https://welldying-backend.onrender.com/load/${username}`
+					`http://localhost:8080/load/${username}`
 				);
 				const data = response.data;
 
@@ -91,7 +91,7 @@ const Funeral_planning = ({ username, password, goToMenu }) => {
 		const file = e.target.files[0];
 		if (file) {
 			setImage(URL.createObjectURL(file));
-			setPronunciationFile(file); // Update pronunciationFile with the new file
+			setPronunciationFile(file);
 		}
 	};
 
@@ -126,15 +126,11 @@ const Funeral_planning = ({ username, password, goToMenu }) => {
 		}
 
 		try {
-			await axios.post(
-				"https://welldying-backend.onrender.com/save",
-				formData,
-				{
-					headers: {
-						"Content-Type": "multipart/form-data",
-					},
-				}
-			);
+			await axios.post("http://localhost:8080/save", formData, {
+				headers: {
+					"Content-Type": "multipart/form-data",
+				},
+			});
 			alert("데이터가 성공적으로 저장되었습니다.");
 		} catch (error) {
 			console.error("저장 오류:", error);
@@ -145,11 +141,11 @@ const Funeral_planning = ({ username, password, goToMenu }) => {
 	return (
 		<div className="Funeral_planning_container">
 			<div className="top-bar">
-				<button className="Funeral_planning_save" onClick={handleSave}>
-					저장
-				</button>
 				<button className="Funeral_planning_main" onClick={() => goToMenu()}>
 					메뉴
+				</button>
+				<button className="Funeral_planning_save" onClick={handleSave}>
+					저장
 				</button>
 			</div>
 			<h1>장례계획</h1>
@@ -239,28 +235,30 @@ const Funeral_planning = ({ username, password, goToMenu }) => {
 			<p>{selectedHospital}</p>
 
 			<p>장례계획 세우기(상조선택)</p>
-			<div>
+				<div>
 				{Object.keys(services).map((service) => (
 					<div key={service}>
-						<label>
-							<input
-								type="radio"
-								name="service"
-								value={service}
-								checked={selectedService === service}
-								onChange={handleServiceChange}
-							/>
-							{service}
-						</label>
+					<label>
+						<input
+						type="radio"
+						name="service"
+						value={service}
+						checked={selectedService === service}
+						onChange={handleServiceChange}
+						/>
+						{service}
+					</label>
+					<div>
 						<button
-							className="Funeral_planning_homepage"
-							onClick={() => openServiceWebsite(services[service])}
+						className="Funeral_planning_homepage"
+						onClick={() => openServiceWebsite(services[service])}
 						>
-							홈페이지 방문
+						홈페이지 방문
 						</button>
 					</div>
+					</div>
 				))}
-			</div>
+				</div>
 
 			<p>장례식장 정하기</p>
 			<iframe

@@ -3,24 +3,24 @@
 
 /* =====전체 스타일 초기화===== */
 body {
-		margin: 0px;
-		font-size: 11pt;
-		font-family: Nanum Gothic;
-		-webkit-font-smoothing: antialiased;
-		-moz-osx-font-smoothing: grayscale;
-		display: flex;
-		flex-direction: column;
-		flex-wrap: nowrap;
-		justify-content: center;
-		align-items: center;
-		background-color: #DEDAC9;
-		height: 100vh;
-		overflow: hidden;
+	margin: 0px;
+	font-size: 11pt;
+	font-family: Nanum Gothic;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	background-color: #DEDAC9;
+	height: 100vh;
+	overflow: hidden;
 }
 
-div{
+div {
 	scrollbar-width: none;
-} 
+}
 
 button {
 	font-family: inherit;
@@ -30,16 +30,17 @@ button {
 	height: 56px;
 	padding: 4px 8px;
 	color: #ffffff;
-	background-color: #ff9d74; 
+	background-color: #ff9d74;
 	border: none;
 	border-radius: 4px;
 	cursor: pointer;
-	transition: background-color 0.3s ease; 
-	box-sizing: border-box; 
-	flex-shrink: 0; 
+	transition: background-color 0.3s ease;
+	box-sizing: border-box;
+	flex-shrink: 0;
 }
 
-button:hover {
+/* 어색해서 변경해 두었는데 원해는 hover였어요 */
+button:active {
 	background-color: #ff7f50;
 }
 
@@ -49,32 +50,30 @@ button:hover {
 	font-size: calc(1rem + 0.5vw);
 	width: 100%;
 	height: 100%;
-    overflow: hidden;
-    border-radius: 10px;
-    background-color: #ffffff;
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    align-items: center;
-    overflow: hidden;
-    scrollbar-width: none;
+	overflow: hidden;
+	border-radius: 10px;
+	background-color: #ffffff;
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+	align-items: center;
+	overflow: hidden;
+	scrollbar-width: none;
 	flex-wrap: nowrap;
 }
 
-.page{
+.page {
 	width: 100%;
 	height: 100%;
-	display: flex;
 	flex-direction: column;
 	flex-wrap: nowrap;
-	align-content: center;
 	justify-content: flex-start;
 	align-items: center;
 	overflow: scroll;
-	scrollbar-width: none;	
+	scrollbar-width: none;
 }
 
-.content{
+.content {
 	display: flex;
 	width: 100%;
 	min-height: 100%;
@@ -89,26 +88,27 @@ button:hover {
 	margin: 0 0 0 0;
 }
 
-.tempbox{
+.tempbox {
 	border-radius: 20px;
 	margin: 10px;
 	width: 50%;
 	padding-top: 50%;
-	background: linear-gradient(to top right, #00000022 calc(50% - 1px), #000000AA, #00000022 calc(50% + 1px) )
+	background: linear-gradient(to top right, #00000022 calc(50% - 1px), #000000AA, #00000022 calc(50% + 1px));
 }
 
 .col1 {
-    display: flex;
-    width: 100%;
-    height: -moz-fit-content;
-    height: fit-content;
-    background-color: rgba(0, 0, 0, 0);
-    flex-direction: column;
-    align-items: stretch;
-	button{
-		min-width: 98%;
-		border-radius: 100px;
-	}
+	display: flex;
+	width: 100%;
+	height: -moz-fit-content;
+	height: fit-content;
+	background-color: rgba(0, 0, 0, 0);
+	flex-direction: column;
+	align-items: stretch;
+}
+
+.col1 button {
+	min-width: 98%;
+	border-radius: 100px;
 }
 
 .col2 {
@@ -121,13 +121,14 @@ button:hover {
 	flex-direction: row;
 	flex-wrap: nowrap;
 	align-content: flex-start;
-	button{
-		min-width: 48%;
-		border-radius: 100px;
-	}
 }
 
-.col3{
+.col2 button {
+	min-width: 48%;
+	border-radius: 100px;
+}
+
+.col3 {
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;
@@ -137,42 +138,44 @@ button:hover {
 	flex-direction: column;
 	flex-wrap: nowrap;
 	align-content: flex-start;
-	button{
-		font-size: 16pt;
-		min-width: 23%;
-		border-radius: 100px;
-
-	}
 }
 
-.button-L{
+.col3 button {
+	font-size: 16pt;
+	min-width: 23%;
+	border-radius: 100px;
+}
+
+.button-L {
 	min-width: 98%;
 	border-radius: 100px;
 }
 
-.button-M{
+.button-M {
 	min-width: 48%;
 	border-radius: 100px;
 }
 
-.button-S{
+.button-S {
 	font-size: 10pt;
 	min-width: 23%;
 	height: 40px;
 	border-radius: 100px;
 }
 
-.red{
+.red {
 	color: white;
 	background-color: rgb(255, 61, 61);
 }
-.red:hover{
+
+.red:hover {
 	background-color: rgb(139, 27, 27);
 }
+
 /* 아이디 - 컨테이너 */
-#line{
+#line {
 	border: black solid;
-	border-top:  1px;
+	border-top: 1px;
 	border-bottom: 0px;
 	border-left: 0px;
 	border-right: 0px;

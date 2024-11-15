@@ -5,7 +5,7 @@ const VolunteerWork = ({ goToMenu }) => {
   return (
     <div className="volunteer-container">
       <div className="top-bar">
-        <button className="volunteer-menu-button" onClick={() => goToMenu()}>메뉴</button>
+        <button className="volunteer-menu-button" onClick={() => goToMenu()}></button>
       </div>
       <h1 className="volunteer-title">자원봉사</h1>
       <p className="volunteer-description">

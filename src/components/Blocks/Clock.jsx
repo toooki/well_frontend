@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
 const Clock = () => {
     const [currentTime, setCurrentTime] = useState(new Date());
@@ -11,13 +11,20 @@ const Clock = () => {
         return () => clearInterval(timer);
     }, []);
 
-    const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-    const timeOptions = { hour: '2-digit', minute: '2-digit' }; // 초를 제외한 시각 옵션
+    const dateOptions = {
+        weekday: "long",
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+    };
+    const timeOptions = { hour: "2-digit", minute: "2-digit" };
 
     return (
         <div className="Clock">
-            <div>{currentTime.toLocaleDateString('ko-KR', dateOptions)}</div>
-            <div>{currentTime.toLocaleTimeString('ko-KR', timeOptions)}</div>
+            <div>
+                {currentTime.toLocaleDateString("ko-KR", dateOptions) + " "}
+                {currentTime.toLocaleTimeString("ko-KR", timeOptions)}
+            </div>
         </div>
     );
 };

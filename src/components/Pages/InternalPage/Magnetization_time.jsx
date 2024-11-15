@@ -85,9 +85,7 @@ const Magnetization_time = ({ goToMenu }) => {
   return (
     <div className="container">
       <div className="top-bar">
-        <button className="Magnetization_time_main" onClick={goToMenu}>
-          <Home/>
-          </button>
+         <button className="Magnetization_time_main" onClick={() => goToMenu()}></button>
       </div>
       <h1 className="title">자성시간</h1>
       <b className="subtitle">지금까지 자신이 어떤 삶을 살아왔는지 다시 돌아보는 시간을 가져봅니다.</b>

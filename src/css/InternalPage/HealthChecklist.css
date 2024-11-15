@@ -9,7 +9,7 @@
 
 .HealthChecklist_container .top-bar {
     z-index: 1;
-    background-color: #8f8f8f;
+    background-color: #ffe4c8;
     width: 100%;
     height: 60px;
     position: sticky;
@@ -20,11 +20,9 @@
 }
 
 .HealthChecklist_container .top-bar button {
-    width: 20%;
-    height: 70%;
     font-size: 16px;
     font-weight: bold;
-    color: #fff;
+    color:#000000;
     border: none;
     border-radius: 5px;
     margin: 3%;
@@ -47,7 +45,7 @@
 
 .result-container .top-bar {
     z-index: 1;
-    background-color: #8f8f8f;
+    background-color: #ffe4c8;
     width: 100%;
     height: 60px;
     position: sticky;
@@ -58,11 +56,9 @@
 }
 
 .result-container .top-bar button {
-    width: 20%;
-    height: 70%;
     font-size: 16px;
     font-weight: bold;
-    color: #fff;
+    color:#000000;
     border: none;
     border-radius: 5px;
     margin: 3%;
@@ -74,9 +70,10 @@
 }
 
 .scroll-container {
-    width: 100%;
+    width: 80%;
     height: 100%;
     overflow: scroll;
+    
 }
 
 .question-text {
@@ -107,63 +104,105 @@
 }
 
 .main-menu-button-HC {
-    font-size: 16px;
-    font-weight: bold;
-    color: #fff;
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background: url("icons/back_button.svg") no-repeat center center;
+    background-size: contain;
     border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    position: fixed;
-    left: 10px;
-    top: 10px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2%;
+    color: transparent;
+    position: sticky;
+    left: 3%;
+    top: 1%;
     outline: none;
-    transition: background-color 0.3s, transform 0.2s;
+}
+
+.recheck-button {
+    position: relative;
+    background-color: #ffffff00;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2%;
+    color: transparent;
+    position: sticky;
+    right: 3%;
+    top: 1%;
+    outline: none;
 }
 
 .HealthChecklist_main {
-    font-size: 16px;
-    font-weight: bold;
-    color: #fff;
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background: url("icons/back_button.svg") no-repeat center center;
+    background-size: contain;
     border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    position: fixed;
-    left: 10px;
-    top: 10px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2%;
+    color: transparent;
+    position: sticky;
+    left: 3%;
+    top: 1%;
     outline: none;
-    transition: background-color 0.3s, transform 0.2s;
 }
 
 .HealthChecklist_save {
-    font-size: 16px;
-    font-weight: bold;
-    color: #fff;
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background: url("icons/Upload.svg") no-repeat center center;
+    background-size: contain;
     border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2%;
+    color: transparent;
+    position: sticky;
+    right: 3%;
+    top: 1%;
     outline: none;
-    transition: background-color 0.3s, transform 0.2s;
-    position: fixed;
-    right: 10px;
-    top: 10px;
 }
 
 .save-button_checklist {
-    font-size: 16px;
-    font-weight: bold;
-    color: #fff;
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background: url("icons/Save2.svg") no-repeat center center;
+    background-size: contain;
     border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2%;
+    color: transparent;
+    position: sticky;
+    right: 3%;
+    top: 1%;
     outline: none;
-    transition: background-color 0.3s, transform 0.2s;
-    position: fixed;
-    right: 10px;
-    top: 10px;
 }
 
 .menu-button {

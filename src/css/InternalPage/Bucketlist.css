@@ -8,7 +8,7 @@
 }
 
 .bucketlistContainer .top-bar {
-    background-color: #8f8f8f;
+    background-color: #ffe4c8;
     width: 100%;
     height: 60px;
     position: sticky;
@@ -58,12 +58,44 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px;
+    padding: 4px;
     border-bottom: 1px solid #ccc;
 }
 
 .bucketlistContainer ul li span {
     flex: 1;
+}
+
+input[type="checkbox"] {
+    width: 0.9rem;
+    height: 0.9rem;
+    border-radius: 50%;
+    border: 1px solid #999;
+    appearance: none;
+    cursor: pointer;
+  }
+
+  input[type="checkbox"]:checked {
+    background: #000000;
+    border: none;
+  }
+
+.handleDelete {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    background: url("icons/Trash.svg") no-repeat center center;
+    background-size: contain;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2%;
+    color: transparent;
+    position: sticky;
+    outline: none;    
 }
 
 .bucketlist-main {
@@ -118,11 +150,10 @@
     border-radius: 4px;
     font-size: 16px;
     font-weight: bold;
-    color: #fff;
-    border: none;
+    color: #000000;
     border-radius: 5px;
     cursor: pointer;
     outline: none;
-    transition: background-color 0.3s, transform 0.2s;
     margin-top: 25px;
+    background-color: #ff9d74;
 }

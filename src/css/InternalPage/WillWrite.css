@@ -8,7 +8,7 @@
 }
 
 .Will_Write_container .top-bar {
-    background-color: #8f8f8f;
+    background-color: #ffe4c8;
     width: 100%;
     height: 60px;
     position: sticky;
@@ -73,8 +73,8 @@
 }
 
 textarea {
-    width: 97%;
-    height: 500px;
+    min-width: 97%;
+    min-height: 500px;
 }
 
 .audio-controls {
