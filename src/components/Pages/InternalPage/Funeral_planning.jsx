@@ -27,7 +27,7 @@ const Funeral_planning = ({ username, password, goToMenu }) => {
 		const loadData = async () => {
 			try {
 				const response = await axios.get(
-					`http://localhost:8080/load/${username}`
+					`https://welldying-backend.onrender.com/load/${username}`
 				);
 				const data = response.data;
 
@@ -126,11 +126,15 @@ const Funeral_planning = ({ username, password, goToMenu }) => {
 		}
 
 		try {
-			await axios.post("http://localhost:8080/save", formData, {
-				headers: {
-					"Content-Type": "multipart/form-data",
-				},
-			});
+			await axios.post(
+				"https://welldying-backend.onrender.com/save",
+				formData,
+				{
+					headers: {
+						"Content-Type": "multipart/form-data",
+					},
+				}
+			);
 			alert("데이터가 성공적으로 저장되었습니다.");
 		} catch (error) {
 			console.error("저장 오류:", error);
@@ -235,30 +239,30 @@ const Funeral_planning = ({ username, password, goToMenu }) => {
 			<p>{selectedHospital}</p>
 
 			<p>장례계획 세우기(상조선택)</p>
-				<div>
+			<div>
 				{Object.keys(services).map((service) => (
 					<div key={service}>
-					<label>
-						<input
-						type="radio"
-						name="service"
-						value={service}
-						checked={selectedService === service}
-						onChange={handleServiceChange}
-						/>
-						{service}
-					</label>
-					<div>
-						<button
-						className="Funeral_planning_homepage"
-						onClick={() => openServiceWebsite(services[service])}
-						>
-						홈페이지 방문
-						</button>
-					</div>
+						<label>
+							<input
+								type="radio"
+								name="service"
+								value={service}
+								checked={selectedService === service}
+								onChange={handleServiceChange}
+							/>
+							{service}
+						</label>
+						<div>
+							<button
+								className="Funeral_planning_homepage"
+								onClick={() => openServiceWebsite(services[service])}
+							>
+								홈페이지 방문
+							</button>
+						</div>
 					</div>
 				))}
-				</div>
+			</div>
 
 			<p>장례식장 정하기</p>
 			<iframe

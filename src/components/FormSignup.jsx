@@ -23,7 +23,7 @@ const SignupForm = (props) => {
 	const handleCheckUsername = async () => {
 		try {
 			const response = await axios.post(
-				"http://localhost:8080/check-username",
+				"https://welldying-backend.onrender.com/check-username",
 				{
 					username: formData.username,
 				}
@@ -43,7 +43,7 @@ const SignupForm = (props) => {
 
 	const handleRequestVerificationCode = async () => {
 		try {
-			await axios.post("http://localhost:8080/send", {
+			await axios.post("https://welldying-backend.onrender.com/send", {
 				phoneNumber: formData.phone,
 			});
 			alert("인증 코드를 전송했습니다.");
@@ -59,12 +59,15 @@ const SignupForm = (props) => {
 			return;
 		}
 		try {
-			const response = await axios.post("http://localhost:8080/verify-code", {
-				username: formData.username,
-				password: formData.password,
-				phoneNumber: formData.phone,
-				authCode: formData.authCode,
-			});
+			const response = await axios.post(
+				"https://welldying-backend.onrender.com/verify-code",
+				{
+					username: formData.username,
+					password: formData.password,
+					phoneNumber: formData.phone,
+					authCode: formData.authCode,
+				}
+			);
 			alert("회원가입이 완료되었습니다.");
 			setIsSignupCompleted(true);
 		} catch (error) {

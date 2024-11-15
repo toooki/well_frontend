@@ -14,7 +14,7 @@ const WillWrite = ({ username, goToMenu }) => {
 		// 페이지 로드 시 기존 유언장 데이터 가져오기
 		const fetchWillData = async () => {
 			const response = await fetch(
-				`http://localhost:8080/willwrite/${username}`
+				`https://welldying-backend.onrender.com/willwrite/${username}`
 			);
 			const data = await response.json();
 
@@ -53,11 +53,14 @@ const WillWrite = ({ username, goToMenu }) => {
 	const saveTextWill = async () => {
 		const willText = `유언장\n${textWill}`;
 
-		const response = await fetch("http://localhost:8080/willwrite/text", {
-			method: "POST",
-			headers: { "Content-Type": "application/json" },
-			body: JSON.stringify({ username, willwrite: willText }),
-		});
+		const response = await fetch(
+			"https://welldying-backend.onrender.com/willwrite/text",
+			{
+				method: "POST",
+				headers: { "Content-Type": "application/json" },
+				body: JSON.stringify({ username, willwrite: willText }),
+			}
+		);
 		if (response.ok) {
 			alert("유언장이 저장되었습니다.");
 		} else {
@@ -81,11 +84,14 @@ const WillWrite = ({ username, goToMenu }) => {
 		try {
 			const base64String = await blobToBase64(audioBlob);
 
-			const response = await fetch("http://localhost:8080/willwrite/audio", {
-				method: "POST",
-				headers: { "Content-Type": "application/json" },
-				body: JSON.stringify({ username, willrecordBase64: base64String }),
-			});
+			const response = await fetch(
+				"https://welldying-backend.onrender.com/willwrite/audio",
+				{
+					method: "POST",
+					headers: { "Content-Type": "application/json" },
+					body: JSON.stringify({ username, willrecordBase64: base64String }),
+				}
+			);
 			if (response.ok) {
 				alert("유언장이 저장되었습니다.");
 			} else {
